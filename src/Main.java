@@ -9,6 +9,15 @@ public class Main {
         HashSet<String> finalRegions = new HashSet<>();
         HashSet<String> coveredObjects = new HashSet<>();
 
+        greedAlgorytm(map, coveredObjects, finalRegions);
+
+        System.out.println("Selected regions:");
+        for (String region : finalRegions) {
+            System.out.println(region);
+        }
+    }
+
+    private static void greedAlgorytm(HashMap<String, HashSet<String>> map, HashSet<String> coveredObjects, HashSet<String> finalRegions) {
         while (!map.isEmpty()) {
             String bestRegion = null;
             HashSet<String> bestRegionObjects = new HashSet<>();
@@ -33,11 +42,6 @@ public class Main {
             else {
                 break;
             }
-        }
-
-        System.out.println("Selected regions:");
-        for (String region : finalRegions) {
-            System.out.println(region);
         }
     }
 
